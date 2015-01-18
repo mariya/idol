@@ -24,7 +24,8 @@ describe("ProgramCtrl", function() {
   }));
 
   it('fetches program information', function () {
-    scope.fetchProgramInfo();
+    httpBackend.expect('GET', 'http://api.tv4play.se/site/programs/idol').respond(mockProgram);
+    httpBackend.flush();
     expect(scope.program).toEqual(mockProgram);
   });
 });
