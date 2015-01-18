@@ -23,12 +23,26 @@
     <![endif]-->
   </head>
   <body>
-    <h1>Idol - tv4.se</h1>
-
-    <p>Nothing here {{'yet' + '!'}}</p>
-
     <div ng-controller='ProgramCtrl'>
-      {{program}}
+      <img src="{{program.top_image.path}}">
+      <h1>{{program.name}} ({{program.channel}})</h1>
+      <p>{{program.description}}</p>
+      <img src="{{program.program_image.path}}">
+      <h2>Social Media</h2>
+      <ul>
+        <li>
+          <a href="{{program.facebook_page_url}}">Facebook</a>
+        </li>
+        <li>
+          <a href="{{program.instagram_page_url}}">Instagram</a>
+        </li>
+        <li>
+          <a href="{{program.twitter_page_url}}">Twitter</a>
+        </li>
+        <li>
+          <a href="{{program.youtube_page_url}}">YouTube</a>
+        </li>
+      </ul>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
