@@ -1,0 +1,22 @@
+{
+  "name": "idol",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mariya/idol",
+  "authors": [
+    "Mariya Lysenkova <mariya@rampageconsulting.com>"
+  ],
+  "description": "A sample AngularJS app showing Swedish Idol contestants.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs": "~1.3.9",
+    "bootstrap": "~3.3.1",
+    "jasmine": "~2.1.3"
+  }
+}
