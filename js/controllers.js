@@ -5,6 +5,8 @@ idolApp.constant('IDOL_API', {
   videoAssetsUrl: 'http://api.tv4play.se/play/video_assets.json'
 });
 
-idolApp.controller('ProgramCtrl', function ($scope) {
-  // todo: Display information about the program.
-});
+idolApp.controller('ProgramCtrl', ['$scope', '$http', function($scope, $http) {
+  $scope.fetchProgramInfo = function() {
+    $scope.program = 'foo';
+  };
+}]);
