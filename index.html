@@ -24,25 +24,29 @@
   </head>
   <body>
     <div ng-controller='ProgramCtrl'>
-      <img src="{{program.top_image.path}}">
-      <h1>{{program.name}} ({{program.channel}})</h1>
-      <p>{{program.description}}</p>
-      <img src="{{program.program_image.path}}">
-      <h2>Social Media</h2>
-      <ul>
-        <li>
-          <a href="{{program.facebook_page_url}}">Facebook</a>
-        </li>
-        <li>
-          <a href="{{program.instagram_page_url}}">Instagram</a>
-        </li>
-        <li>
-          <a href="{{program.twitter_page_url}}">Twitter</a>
-        </li>
-        <li>
-          <a href="{{program.youtube_page_url}}">YouTube</a>
-        </li>
-      </ul>
+      <div ng-show="program">
+        <img class="program-top-image" src="{{program.top_image.path}}">
+        <h1>{{program.name}} ({{program.channel}})</h1>
+        <p>{{program.description}}</p>
+        <p>
+          <a href="#">{{program.participant_tab_text}}</a>
+        </p>
+        <img src="{{program.program_image.path}}">
+        <ul>
+          <li>
+            <a href="{{program.facebook_page_url}}">Facebook</a>
+          </li>
+          <li>
+            <a href="{{program.instagram_page_url}}">Instagram</a>
+          </li>
+          <li>
+            <a href="{{program.twitter_page_url}}">Twitter</a>
+          </li>
+          <li>
+            <a href="{{program.youtube_page_url}}">YouTube</a>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
