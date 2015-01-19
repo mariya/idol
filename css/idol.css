@@ -1,0 +1,38 @@
+body {
+  background-color: #eee;
+}
+
+.container {
+  background-color: #fff;
+}
+
+.program-top-image,
+.program-image {
+  max-width: 100%;
+}
+
+.social-media-nav {
+  position: absolute;
+  top: 0;
+}
+
+.social-media-nav ul li {
+  display: inline-block;
+}
+
+aside.participants h3 {
+  background-color: #eee;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+aside.participants ul {
+  padding: 0;
+}
+
+aside.participants ul li {
+  border-bottom: 1px dashed #eee;
+  list-style: none;
+  padding: 5px 0;
+}
