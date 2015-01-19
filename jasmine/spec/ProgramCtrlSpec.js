@@ -1,5 +1,5 @@
 describe("ProgramCtrl", function() {
-  var mockProgram, scope;
+  var httpBackend, mockProgram, scope;
 
   beforeEach(module('idolApp'));
 
@@ -9,21 +9,17 @@ describe("ProgramCtrl", function() {
       nid: "idol",
       name: "Idol",
       channel: "TV4",
-      description: "A program where people sing and stuff"
+      description: "A program where people sing and stuff",
+      participant_groups: [],
+      participantsByKey: {}
     };
-
-    // Mock ProgramSvc.
-    $provide.value('ProgramSvc',{
-      get: function() {
-        return {
-          success: function(callback) { return callback(mockProgram);}
-        };
-      }
-    });
   }));
 
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($controller, $rootScope, $httpBackend) {
+    httpBackend = $httpBackend;
     scope = $rootScope.$new();
+
+    httpBackend.expectGET('http://api.tv4play.se/site/programs/idol').respond(200, mockProgram);
 
     // Mock controller.
     controller = $controller('ProgramCtrl', {
@@ -32,6 +28,7 @@ describe("ProgramCtrl", function() {
   }));
 
   it('assigns the program to scope', function () {
+    httpBackend.flush();
     expect(scope.program).toEqual(mockProgram);
   });
 
