@@ -1,23 +1,29 @@
 <div ng-show="program">
   <img class="program-top-image" ng-src="{{program.top_image.path}}">
-  <h1>{{program.name}} ({{program.channel}})</h1>
-  <p>{{program.description}}</p>
-  <p>
-    <a href="#">{{program.participant_tab_text}}</a>
-  </p>
-  <img ng-src="{{program.program_image.path}}">
-  <ul>
-    <li>
+  <ul class="social-media-links">
+    <li ng-show="program.facebook_page_url">
       <a href="{{program.facebook_page_url}}">Facebook</a>
     </li>
-    <li>
+    <li ng-show="program.instagram_page_url">
       <a href="{{program.instagram_page_url}}">Instagram</a>
     </li>
-    <li>
+    <li ng-show="program.twitter_page_url">
       <a href="{{program.twitter_page_url}}">Twitter</a>
     </li>
-    <li>
+    <li ng-show="program.youtube_page_url">
       <a href="{{program.youtube_page_url}}">YouTube</a>
     </li>
   </ul>
+  <aside class="participants">
+    <h2>{{program.participant_tab_text}}</h2>
+    <div class="participant-group" ng-repeat="participant_group in program.participant_groups">
+      <h3>{{participant_group.name}}</h3>
+      <ul class="participant-list">
+        <li ng-repeat="participant in participant_group.participants">{{participant.name}}</li>
+      </ul>
+    </div>
+  </aside>
+  <h1>{{program.name}} ({{program.channel}})</h1>
+  <p>{{program.description}}</p>
+  <img ng-src="{{program.program_image.path}}">
 </div>

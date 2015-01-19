@@ -8,16 +8,11 @@ idolApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/home', {
-        templateUrl: 'partials/home.html',
-        controller: 'ProgramCtrl'
-      }).
-      when('/participants', {
-        templateUrl: 'partials/participants.html',
-        controller: 'ParticipantsCtrl'
+        templateUrl: 'partials/home.html'
       }).
       when('/participants/:participantId', {
-        templateUrl: 'partials/participant-detail.html',
-        controller: 'ParticipantDetailCtrl'
+        templateUrl: 'partials/participant.html',
+        controller: 'ParticipantCtrl'
       }).
       otherwise({
         redirectTo: '/home'

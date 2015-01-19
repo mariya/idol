@@ -31,7 +31,7 @@ describe("ProgramCtrl", function() {
     });
   }));
 
-  it('injects ProgramSvc', function () {
+  it('assigns the program to scope', function () {
     expect(scope.program).toEqual(mockProgram);
   });
 });
