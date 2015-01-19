@@ -33,22 +33,6 @@
     <div class="loader loader-main" ng-hide="program"></div>
     <div class="container" ng-show="program">
       <div class="row">
-        <nav class="social-media-nav">
-          <ul>
-            <li ng-show="program.facebook_page_url">
-              <a href="{{program.facebook_page_url}}">Facebook</a>
-            </li>
-            <li ng-show="program.instagram_page_url">
-              <a href="{{program.instagram_page_url}}">Instagram</a>
-            </li>
-            <li ng-show="program.twitter_page_url">
-              <a href="{{program.twitter_page_url}}">Twitter</a>
-            </li>
-            <li ng-show="program.youtube_page_url">
-              <a href="{{program.youtube_page_url}}">YouTube</a>
-            </li>
-          </ul>
-        </nav>
         <a href="/#/home">
           <img class="program-top-image" ng-src="{{program.top_image.path}}">
         </a>
