@@ -20,7 +20,7 @@ idolControllers.controller('ParticipantCtrl', ['$scope', '$rootScope', '$routePa
       $scope.hasPrevPage = (page > 1);
       $scope.hasNextPage = (page < $scope.numPages);
     });
-  }
+  };
 
   ProgramSvc.success(function(d) {
     var participants = d.participantsByKey;
@@ -31,10 +31,10 @@ idolControllers.controller('ParticipantCtrl', ['$scope', '$rootScope', '$routePa
   $scope.prevPage = function() {
     var page = $scope.page;
     getVideoPage(page - 1);
-  }
+  };
 
   $scope.nextPage = function() {
     var page = $scope.page;
     getVideoPage(page + 1);
-  }
+  };
 }]);
