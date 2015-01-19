@@ -10,7 +10,8 @@ A sample AngularJS app showing Swedish Idol contestants.
 - Bower - package manager
 - Grunt - task manager
 
-## Installation:
+## Installation
+Note: some npm commands may have to be run as sudo.
 - git clone https://github.com/mariya/idol
 - cd idol
 - npm install
