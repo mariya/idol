@@ -29,8 +29,9 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
-    <div class="container" ng-controller="ProgramCtrl" ng-show="program">
+  <body ng-controller="ProgramCtrl" >
+    <div class="loader loader-main" ng-hide="program"></div>
+    <div class="container" ng-show="program">
       <div class="row">
         <nav class="social-media-nav">
           <ul>

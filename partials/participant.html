@@ -1,4 +1,5 @@
 <h1>{{participant.name}}</h1>
+<div class="loader" ng-hide="videos"></div>
 <ul class="videos">
   <li ng-repeat="video in videos" class="row">
     <div class="col-md-3">
@@ -16,5 +17,10 @@
 </ul>
 
 <div class="pagination">
-  <a ng-click="prevPage()" ng-if="page > 1">Previous page</a>
+  <div class="prev">
+    <a ng-click="prevPage()" ng-if="hasPrevPage">Previous page</a>
+  </div>
+  <div class="next">
+    <a ng-click="nextPage()" ng-if="hasNextPage">Next page</a>
+  </div>
 </div>

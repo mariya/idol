@@ -6,6 +6,20 @@ body {
   background-color: #fff;
 }
 
+.loader {
+  background: transparent url('images/ajax-loader.gif') top left no-repeat;
+  display: block;
+  height: 66px;
+  margin: auto;
+  width: 66px;
+}
+
+.loader-main {
+  background-image: url('images/ajax-loader-gray.gif');
+  clear: both;
+  margin: 40px auto;
+}
+
 .program-top-image,
 .program-image {
   max-width: 100%;
@@ -55,4 +69,27 @@ ul.videos li img {
   -moz-border-radius: 5px;
   border-radius: 5px;
   width: 100%;
+}
+
+.pagination {
+  width: 100%;
+}
+
+.pagination > div {
+  display: inline-block;
+  width: 49%;
+}
+
+.pagination a {
+  cursor: pointer;
+}
+
+.pagination .prev {
+  float: left;
+  text-align: left;
+}
+
+.pagination .next {
+  float: right;
+  text-align: right;
 }

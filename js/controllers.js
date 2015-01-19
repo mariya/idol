@@ -10,14 +10,15 @@ idolControllers.controller('ParticipantCtrl', ['$scope', '$rootScope', '$routePa
   var participantId = $routeParams.participantId;
 
   var getVideoPage = function(page) {
+    $scope.videos = null;
     VideoSvc.get(participantId, page).success(function(data) {
-      $scope.page = 1;
+      $scope.page = page;
       $scope.videos = data.results;
-      $scope.totalResults = data.total_hits;
-      $scope.resultsPerPage = data.results.size;
-      var numPages = Math.ceil(parseFloat($scope.totalResults) / parseFloat($scope.resultsPerPage));
+      if (page == 1) {
+        $scope.numPages = Math.ceil(parseFloat(data.total_hits) / parseFloat(data.results.length));
+      }
       $scope.hasPrevPage = (page > 1);
-      $scope.hasNextPage = (page < numPages);
+      $scope.hasNextPage = (page < $scope.numPages);
     });
   }
 
@@ -26,6 +27,11 @@ idolControllers.controller('ParticipantCtrl', ['$scope', '$rootScope', '$routePa
     $scope.participant = participants[participantId];
     getVideoPage(1);
   });
+
+  $scope.prevPage = function() {
+    var page = $scope.page;
+    getVideoPage(page - 1);
+  }
 
   $scope.nextPage = function() {
     var page = $scope.page;
