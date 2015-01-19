@@ -1,4 +1,20 @@
 <h1>{{participant.name}}</h1>
+<ul class="videos">
+  <li ng-repeat="video in videos" class="row">
+    <div class="col-md-3">
+      <a ng-href="http://www.tv4play.se/program/idol?video_id={{video.id}}">
+        <img ng-src="{{video.image}}">
+      </a>
+    </div>
+    <div class="info col-md-9">
+      <a ng-href="http://www.tv4play.se/program/idol?video_id={{video.id}}">
+        <h3>{{video.title}}</h3>
+      </a>
+      <p>{{video.description}}</p>
+    </div>
+  </li>
+</ul>
 
-
-{{participant}}
+<div class="pagination">
+  <a ng-click="prevPage()" ng-if="page > 1">Previous page</a>
+</div>

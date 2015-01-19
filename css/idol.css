@@ -36,3 +36,20 @@ aside.participants ul li {
   list-style: none;
   padding: 5px 0;
 }
+
+ul.videos {
+  padding: 0;
+}
+
+ul.videos li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+ul.videos li h3 {
+  margin-top: 0;
+}
+
+ul.videos li img {
+  width: 100%;
+}

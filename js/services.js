@@ -34,15 +34,17 @@ idolServices.service('ProgramSvc', ['$http', 'IDOL_API', function($http, IDOL_AP
   return this.get();
 }]);
 
-idolServices.service('VideoSvc', ['$http', 'IDOL_API', function($http, VideoSvc, IDOL_API) {
-  this.get = function(participantId) {
-    promise = $http.get(IDOL_API.programUrl).
+idolServices.service('VideoSvc', ['$http', 'IDOL_API', function($http, IDOL_API) {
+  this.get = function(participantId, page) {
+    var url = IDOL_API.videoAssetsUrl +
+      '?tags=' + participantId +
+      '&page=' + page;
+    promise = $http.get(url).
       success(function(data, status, headers, config) {
-        data.participantsByKey = participantsByKey(data);
         return data;
       }).
       error(function(data, status, headers, config) {
-        console.log("ERROR: Could not fetch program info.");
+        console.log("ERROR: Could not fetch videos.");
       });
     return promise;
   };
