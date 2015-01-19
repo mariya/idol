@@ -34,4 +34,6 @@ describe("ProgramCtrl", function() {
   it('assigns the program to scope', function () {
     expect(scope.program).toEqual(mockProgram);
   });
+
+  it('assigns the participants list to root scope');
 });

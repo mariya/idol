@@ -1,11 +1,11 @@
 describe('ProgramSvc', function(){
-  var httpBackend, mockProgram, svc;
+  var httpBackend, injector, mockProgram, svc;
 
   beforeEach(module('idolApp'));
 
   beforeEach(inject(function ($injector) {
     httpBackend = $injector.get('$httpBackend');
-    svc = $injector.get('ProgramSvc');
+    injector = $injector;
 
     // Mock GET response.
     mockProgram = {
@@ -24,10 +24,11 @@ describe('ProgramSvc', function(){
 
     httpBackend.expectGET('http://api.tv4play.se/site/programs/idol').respond(200, mockProgram);
 
-    svc.get()
-      .success(testProgram)
-      .finally(done);
-
+    // svc.get() is called on instantiation.
+    svc = injector.get('ProgramSvc');
+    svc.success(testProgram).finally(done);
     httpBackend.flush();
   });
+
+  it('stores the participants in a list that is searchable by key');
 });

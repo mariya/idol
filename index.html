@@ -56,7 +56,9 @@
           <div class="participant-group" ng-repeat="participant_group in program.participant_groups">
             <h3>{{participant_group.name}}</h3>
             <ul class="participant-list">
-              <li ng-repeat="participant in participant_group.participants">{{participant.name}}</li>
+              <li ng-repeat="participant in participant_group.participants">
+                <a ng-href="/#/participants/{{participant.person_tag}}">{{participant.name}}</a>
+              </li>
             </ul>
           </div>
         </aside>
