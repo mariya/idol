@@ -20,11 +20,10 @@ describe("ProgramCtrl", function() {
       channel: "TV4",
       description: "A program where people sing and stuff"
     };
-    httpBackend.whenPOST('http://api.tv4play.se/site/programs/idol').respond(mockProgram);
+    httpBackend.whenGET('http://api.tv4play.se/site/programs/idol').respond(mockProgram);
   }));
 
   it('fetches program information', function () {
-    httpBackend.expect('GET', 'http://api.tv4play.se/site/programs/idol').respond(mockProgram);
     httpBackend.flush();
     expect(scope.program).toEqual(mockProgram);
   });
