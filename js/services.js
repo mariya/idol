@@ -34,6 +34,16 @@ idolServices.service('ProgramSvc', ['$http', 'IDOL_API', function($http, IDOL_AP
   return this.get();
 }]);
 
-idolServices.service('ParticipantSvc', ['$http', 'ProgramSvc', 'IDOL_API',
-  function($http, ProgramSvc, IDOL_API) {
+idolServices.service('VideoSvc', ['$http', 'IDOL_API', function($http, VideoSvc, IDOL_API) {
+  this.get = function(participantId) {
+    promise = $http.get(IDOL_API.programUrl).
+      success(function(data, status, headers, config) {
+        data.participantsByKey = participantsByKey(data);
+        return data;
+      }).
+      error(function(data, status, headers, config) {
+        console.log("ERROR: Could not fetch program info.");
+      });
+    return promise;
+  };
 }]);
