@@ -2,24 +2,24 @@
 A sample AngularJS app showing Swedish Idol contestants.
 
 ## Technologies used
-AngularJS - web framework
-Jasmine - unit tests
-Protractor - integration tests
-Bootstrap CSS - CSS framework
-Git/Github - version control
-Bower - package manager
-Grunt - task manager
+- AngularJS - web framework
+- Jasmine - unit tests
+- Protractor - integration tests
+- Bootstrap CSS - CSS framework
+- Git/Github - version control
+- Bower - package manager
+- Grunt - task manager
 
 ## Installation:
-git clone https://github.com/mariya/idol
-cd idol
-(You may have to run 'npm install' to install dependencies.)
-npm start
+- git clone https://github.com/mariya/idol
+- cd idol
+- npm install
+- npm start
 
 ## Execution
-Go to http://localhost:8000/
-Unit tests can be run through the browser at: http://localhost:8000/jasmine/SpecRunner.html
-Integration tests can be run from the CLI with: npm run protractor
+- Go to http://localhost:8000/
+- Unit tests can be run through the browser at: http://localhost:8000/jasmine/SpecRunner.html
+- Integration tests can be run from the CLI with: npm run protractor
 
 ## Todo's and Nice to Haves
 - Implementation of the remaining unit tests
