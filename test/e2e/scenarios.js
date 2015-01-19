@@ -3,7 +3,13 @@ describe('Idol App', function() {
   describe('Homepage', function() {
 
     beforeEach(function() {
-      browser.get('index.html');
+      browser.get('/');
+    });
+
+    it('should redirect / to /home', function() {
+      browser.getLocationAbsUrl().then(function(url) {
+        expect(url).toBe('/home');
+      });
     });
 
     it('should show the program top image', function() {
