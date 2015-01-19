@@ -1,0 +1,23 @@
+<div ng-show="program">
+  <img class="program-top-image" ng-src="{{program.top_image.path}}">
+  <h1>{{program.name}} ({{program.channel}})</h1>
+  <p>{{program.description}}</p>
+  <p>
+    <a href="#">{{program.participant_tab_text}}</a>
+  </p>
+  <img ng-src="{{program.program_image.path}}">
+  <ul>
+    <li>
+      <a href="{{program.facebook_page_url}}">Facebook</a>
+    </li>
+    <li>
+      <a href="{{program.instagram_page_url}}">Instagram</a>
+    </li>
+    <li>
+      <a href="{{program.twitter_page_url}}">Twitter</a>
+    </li>
+    <li>
+      <a href="{{program.youtube_page_url}}">YouTube</a>
+    </li>
+  </ul>
+</div>
