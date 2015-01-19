@@ -10,7 +10,7 @@ idolControllers.controller('ParticipantCtrl', ['$scope', '$rootScope', '$routePa
   var participantId = $routeParams.participantId;
 
   ProgramSvc.success(function(d) {
-    var participants = ProgramSvc.getParticipants();
+    var participants = d.participantsByKey;
     $scope.participant = participants[participantId];
   });
 }]);

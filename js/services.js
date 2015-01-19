@@ -6,11 +6,9 @@ idolServices.constant('IDOL_API', {
 });
 
 idolServices.service('ProgramSvc', ['$http', 'IDOL_API', function($http, IDOL_API) {
-  var participants, program;
-
   // Process the participants list so it is easily
   // searchable by participant id.
-  var processParticipants = function(prog) {
+  var participantsByKey = function(prog) {
     var ps = {};
     angular.forEach(prog.participant_groups, function(group, i) {
       angular.forEach(group.participants, function(participant, j) {
@@ -23,8 +21,7 @@ idolServices.service('ProgramSvc', ['$http', 'IDOL_API', function($http, IDOL_AP
   this.get = function() {
     promise = $http.get(IDOL_API.programUrl).
       success(function(data, status, headers, config) {
-        program = data;
-        participants = processParticipants(program);
+        data.participantsByKey = participantsByKey(data);
         return data;
       }).
       error(function(data, status, headers, config) {
@@ -32,10 +29,6 @@ idolServices.service('ProgramSvc', ['$http', 'IDOL_API', function($http, IDOL_AP
       });
     return promise;
   };
-
-  this.getParticipants = function() {
-    return participants;
-  }
 
   // Pre-fetch data on service instantiation.
   return this.get();
