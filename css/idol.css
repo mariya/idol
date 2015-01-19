@@ -51,5 +51,8 @@ ul.videos li h3 {
 }
 
 ul.videos li img {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   width: 100%;
 }
