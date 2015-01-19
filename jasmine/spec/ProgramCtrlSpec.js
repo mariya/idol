@@ -24,6 +24,7 @@ describe("ProgramCtrl", function() {
   }));
 
   it('fetches program information', function () {
+    expect(scope.program).toBeUndefined();
     httpBackend.flush();
     expect(scope.program).toEqual(mockProgram);
   });
