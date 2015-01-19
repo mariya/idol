@@ -1,6 +1,7 @@
 var idolApp = angular.module('idolApp', [
   'ngRoute',
-  'idolControllers'
+  'idolControllers',
+  'idolServices'
 ]);
 
 idolApp.config(['$routeProvider',
